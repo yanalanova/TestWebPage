@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>HTML Elements + JS Logic</title>
+    <title>Connectivity Test Page</title>
     <style>
         body {
             margin: 0;
@@ -118,15 +118,18 @@
 </head>
 <body>
 
-    <h1>HTML Elements + JS Logic</h1>
+    <h1>Connectivity Test Page</h1>
 
     <div class="grid">
 
         <div class="block">
             <h2>Text Inputs</h2>
-            <input type="text" placeholder="Your name">
-            <input type="password" placeholder="Password">
-            <input type="date">
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" id="username" placeholder="Your name">
+                <input type="password" placeholder="Password">
+                <input type="date">
+                <input type="submit" value="Submit">
+            </form>
         </div>
 
         <div class="block">
@@ -138,9 +141,12 @@
 
         <div class="block">
             <h2>Checkboxes</h2>
-            <label><input type="checkbox">Option A</label><br>
-            <label><input type="checkbox">Option B</label><br>
-            <label><input type="checkbox">Option C</label>
+            <form onreset="handleReset()">
+                <label><input type="checkbox" name="option">Option A</label><br>
+                <label><input type="checkbox" name="option">Option B</label><br>
+                <label><input type="checkbox" name="option">Option C</label><br>
+                <input type="reset" value="Reset">
+            </form>
         </div>
 
         <div class="block">
@@ -186,8 +192,6 @@
         <div class="block">
             <h2>Buttons</h2>
             <button onclick="alert('Button clicked!')">Click me</button>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
             <button disabled>Disabled</button>
             <button onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Done', 1500)">Loading Button</button>
             <button onclick="toggleBlock()">Toggle Block</button>
@@ -223,6 +227,20 @@
     </div>
 
     <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            if (username === '') {
+                alert("Please enter your name.");
+                return;
+            }
+            alert(`Submitted! Hello, ${username}`);
+        }
+
+        function handleReset() {
+            alert("Checkboxes have been reset.");
+        }
+
         function toggleBlock() {
             const el = document.getElementById("toggleTarget");
             el.classList.toggle("hidden");
