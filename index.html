@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>All HTML Elements Test Page</title>
+    <title>HTML Elements + JS Logic</title>
     <style>
         body {
             margin: 0;
@@ -21,7 +21,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
             padding: 40px;
             max-width: 1400px;
@@ -43,6 +43,10 @@
             }
 
         input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="range"],
+        input[type="file"],
         textarea,
         select {
             width: 100%;
@@ -101,32 +105,39 @@
         img {
             max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         a {
             color: #1b263b;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <h1>All HTML Elements Test Page</h1>
+    <h1>HTML Elements + JS Logic</h1>
 
     <div class="grid">
 
         <div class="block">
-            <h2>Text Box</h2>
-            <input type="text" placeholder="Enter text here">
+            <h2>Text Inputs</h2>
+            <input type="text" placeholder="Your name">
+            <input type="password" placeholder="Password">
+            <input type="date">
         </div>
 
         <div class="block">
-            <h2>Text Area</h2>
-            <textarea rows="4" placeholder="Write multiple lines..."></textarea>
+            <h2>Textarea & Range</h2>
+            <textarea rows="3" placeholder="Type your message..."></textarea>
+            <label for="range">Volume:</label>
+            <input type="range" min="0" max="100" value="50" id="range">
         </div>
 
         <div class="block">
-            <h2>Check Boxes</h2>
+            <h2>Checkboxes</h2>
             <label><input type="checkbox">Option A</label><br>
             <label><input type="checkbox">Option B</label><br>
             <label><input type="checkbox">Option C</label>
@@ -134,68 +145,89 @@
 
         <div class="block">
             <h2>Radio Buttons</h2>
-            <label><input type="radio" name="group1">Choice 1</label><br>
-            <label><input type="radio" name="group1">Choice 2</label><br>
-            <label><input type="radio" name="group1">Choice 3</label>
+            <label><input type="radio" name="connection">Wi-Fi</label><br>
+            <label><input type="radio" name="connection">Ethernet</label><br>
+            <label><input type="radio" name="connection">Mobile</label>
         </div>
 
         <div class="block">
-            <h2>Combo Box (Select)</h2>
+            <h2>Combo Box</h2>
             <select>
-                <option>Select an item</option>
-                <option>Item 1</option>
-                <option>Item 2</option>
-                <option>Item 3</option>
-                <option>Item 4</option>
-                <option>Item 5</option>
+                <option>Select plan</option>
+                <option>Free</option>
+                <option>Basic</option>
+                <option>Pro</option>
+                <option>Enterprise</option>
             </select>
         </div>
 
         <div class="block">
-            <h2>List Box (Multi-select)</h2>
+            <h2>List Box</h2>
             <select multiple size="5">
                 <option>Apple</option>
                 <option>Banana</option>
-                <option>Grapes</option>
-                <option>Orange</option>
-                <option>Avocado</option>
-                <option>Watermelon</option>
+                <option>Carrot</option>
+                <option>Chicken</option>
+                <option>Salmon</option>
             </select>
+        </div>
+
+        <div class="block">
+            <h2>File Upload</h2>
+            <input type="file">
+        </div>
+
+        <div class="block">
+            <h2>Disabled & Readonly</h2>
+            <input type="text" value="Can't edit me" disabled><br>
+            <input type="text" value="Read-only text" readonly>
+        </div>
+
+        <div class="block">
+            <h2>Buttons</h2>
+            <button onclick="alert('Button clicked!')">Click me</button>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <button disabled>Disabled</button>
+            <button onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Done', 1500)">Loading Button</button>
+            <button onclick="toggleBlock()">Toggle Block</button>
+        </div>
+
+        <div class="block hidden" id="toggleTarget">
+            <h2>Dynamically Shown Block</h2>
+            <p>This block was shown using JavaScript toggle.</p>
         </div>
 
         <div class="block">
             <h2>Hyperlink</h2>
-            <a href="https://example.com" target="_blank">Visit Example.com</a>
+            <a href="https://example.com" target="_blank">Visit Example</a>
         </div>
 
         <div class="block">
             <h2>Image</h2>
-            <img src="https://via.placeholder.com/400x250.png?text=Test+Image" alt="Placeholder Image">
+            <img src="https://via.placeholder.com/400x250.png?text=Test+Image" alt="Test image">
         </div>
 
-        <div class="block">
-            <h2>Table: Healthy Food</h2>
+        <div class="block" style="grid-column: span 2;">
+            <h2>Healthy Food Table</h2>
             <table>
-                <tr><th>Food</th><th>Calories</th><th>Type</th></tr>
+                <tr><th>Food</th><th>Calories</th><th>Category</th></tr>
                 <tr><td>Apple</td><td>95</td><td>Fruit</td></tr>
-                <tr><td>Chicken</td><td>165</td><td>Protein</td></tr>
                 <tr><td>Rice</td><td>216</td><td>Grain</td></tr>
+                <tr><td>Chicken</td><td>165</td><td>Protein</td></tr>
                 <tr><td>Avocado</td><td>250</td><td>Fat</td></tr>
                 <tr><td>Broccoli</td><td>55</td><td>Vegetable</td></tr>
             </table>
         </div>
 
-        <div class="block">
-            <h2>Buttons</h2>
-            <button>Basic Button</button>
-            <input type="submit" value="Submit Button">
-            <input type="reset" value="Reset Button">
-            <button disabled>Disabled Button</button>
-            <button onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Button',1000)">Loading Button</button>
-            <button><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Arrow_right_font_awesome.svg" width="16" style="vertical-align:middle; margin-right:6px;">Icon Button</button>
-        </div>
-
     </div>
+
+    <script>
+        function toggleBlock() {
+            const el = document.getElementById("toggleTarget");
+            el.classList.toggle("hidden");
+        }
+    </script>
 
 </body>
 </html>
