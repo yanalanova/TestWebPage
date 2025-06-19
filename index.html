@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Elements Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Elements for Extension Testing</h1>
+
+  <section>
+    <label for="textbox">Text Box:</label>
+    <input type="text" id="textbox" placeholder="Type here...">
+  </section>
+
+  <section>
+    <label for="textarea">Text Area:</label>
+    <textarea id="textarea" rows="4" cols="40" placeholder="Write something..."></textarea>
+  </section>
+
+  <section>
+    <label>Button:</label>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+  </section>
+
+  <section>
+    <label for="checkbox">Checkbox:</label>
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox">I agree to the terms</label>
+  </section>
+
+  <section>
+    <label for="combo">Combo Box (Select):</label>
+    <select id="combo">
+      <option value="one">Option 1</option>
+      <option value="two">Option 2</option>
+    </select>
+  </section>
+
+  <section>
+    <label for="link">Hyperlink:</label>
+    <a href="https://example.com" target="_blank" id="link">Visit Example</a>
+  </section>
+
+  <section>
+    <label>Image:</label>
+    <img src="https://via.placeholder.com/150" alt="Placeholder image">
+  </section>
+
+  <section>
+    <label for="listbox">List Box (multi-select):</label>
+    <select id="listbox" multiple size="4">
+      <option>Item 1</option>
+      <option>Item 2</option>
+      <option>Item 3</option>
+    </select>
+  </section>
+
+  <section>
+    <label>Radio Buttons:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+  </section>
+
+  <section>
+    <label>Table:</label>
+    <table>
+      <tr><th>Name</th><th>Age</th></tr>
+      <tr><td>Olivia</td><td>25</td></tr>
+      <tr><td>John</td><td>30</td></tr>
+    </table>
+  </section>
+</body>
+</html>

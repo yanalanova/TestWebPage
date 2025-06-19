@@ -1,0 +1,5 @@
+.vs/
+*.vsidx
+*.user
+*.tmp
+node_modules/
