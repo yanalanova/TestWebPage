@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Connectivity Web Page</title>
+    <title>Connectivity Test Page</title>
     <style>
         body {
             margin: 0;
@@ -11,82 +11,200 @@
             color: #1b263b;
         }
 
-        .hero {
-            background: linear-gradient(to bottom, #1b263b, #2c3e50);
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-            .hero img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            }
-
         h1 {
-            margin-top: 30px;
-            font-size: 2.5em;
+            text-align: center;
+            background: #1b263b;
             color: white;
+            padding: 30px 0;
+            margin: 0;
         }
 
-        .section {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .block {
             background: white;
-            margin: 40px auto;
-            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            max-width: 700px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
             border-left: 6px solid #1b263b;
         }
 
-            .section h2 {
+            .block h2 {
+                margin-top: 0;
+                font-size: 1.2em;
                 color: #1b263b;
-                margin-bottom: 20px;
             }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
         }
 
         input[type="radio"],
         input[type="checkbox"] {
             margin-right: 10px;
-            transform: scale(1.2);
+            transform: scale(1.1);
             accent-color: #1b263b;
         }
 
-        .input-group {
-            margin-bottom: 20px;
+        button,
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #1b263b;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            button:hover,
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+                background-color: #2c3e50;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #1b263b;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <img src="hero-image.png" alt="Connectivity Test Web Page" />
-        <h1>Connectivity Web Page</h1>
-    </section>
+    <h1>Connectivity Web Page</h1>
 
-    <section class="section">
-        <h2>Radio Buttons</h2>
-        <div class="input-group">
-            <label><input type="radio" name="network" value="wifi">Wi-Fi</label>
-            <label><input type="radio" name="network" value="ethernet">Ethernet</label>
-            <label><input type="radio" name="network" value="mobile">Mobile Data</label>
+    <div class="grid">
+
+        <div class="block">
+            <h2>User Info</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your name">
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" placeholder="Your age">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="Your city">
+
+            <input type="submit" value="Submit">
         </div>
-    </section>
 
-    <section class="section">
-        <h2>Checkboxes</h2>
-        <div class="input-group">
-            <label><input type="checkbox" name="status" value="connected">Connected</label>
-            <label><input type="checkbox" name="status" value="secure">Secure</label>
+        <div class="block">
+            <h2>Connection Type</h2>
+            <label><input type="radio" name="connection" value="wifi">Wi-Fi</label><br>
+            <label><input type="radio" name="connection" value="ethernet">Ethernet</label><br>
+            <label><input type="radio" name="connection" value="mobile">Mobile Data</label><br>
+            <input type="reset" value="Reset">
+        </div>
+
+        <div class="block">
+            <h2>Connection Status</h2>
+            <label><input type="checkbox" name="status" value="connected">Connected</label><br>
+            <label><input type="checkbox" name="status" value="secure">Secure</label><br>
             <label><input type="checkbox" name="status" value="fast">Fast Connection</label>
         </div>
-    </section>
+
+        <div class="block">
+            <h2>Combo Box</h2>
+            <label for="combo">Select your diet style:</label>
+            <select id="combo">
+                <option>Standard</option>
+                <option>Vegetarian</option>
+                <option>Vegan</option>
+                <option>Keto</option>
+                <option>Paleo</option>
+                <option>Low Carb</option>
+                <option>Intermittent Fasting</option>
+            </select>
+        </div>
+
+        <div class="block">
+            <h2>List Box</h2>
+            <label for="listbox">Preferred meals:</label>
+            <select id="listbox" multiple size="5">
+                <option>Chicken Salad</option>
+                <option>Fruit Bowl</option>
+                <option>Protein Shake</option>
+                <option>Quinoa with Veggies</option>
+                <option>Avocado Toast</option>
+                <option>Greek Yogurt</option>
+            </select>
+        </div>
+
+        <div class="block">
+            <h2>Image</h2>
+            <img src="https://via.placeholder.com/400x250.png?text=Healthy+Food+Image" alt="Healthy food sample">
+        </div>
+
+        <div class="block" style="grid-column: span 2;">
+            <h2>Healthy Eating Table</h2>
+            <table>
+                <tr>
+                    <th>Food</th>
+                    <th>Calories</th>
+                    <th>Category</th>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>95 kcal</td>
+                    <td>Fruit</td>
+                </tr>
+                <tr>
+                    <td>Brown Rice</td>
+                    <td>216 kcal</td>
+                    <td>Grain</td>
+                </tr>
+                <tr>
+                    <td>Chicken Breast</td>
+                    <td>165 kcal</td>
+                    <td>Protein</td>
+                </tr>
+                <tr>
+                    <td>Avocado</td>
+                    <td>250 kcal</td>
+                    <td>Healthy Fat</td>
+                </tr>
+                <tr>
+                    <td>Broccoli</td>
+                    <td>55 kcal</td>
+                    <td>Vegetable</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
 
 </body>
 </html>
