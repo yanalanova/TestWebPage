@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Connectivity Test Page</title>
+    <title>All HTML Elements Test Page</title>
     <style>
         body {
             margin: 0;
@@ -24,7 +24,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 40px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: auto;
         }
 
@@ -38,7 +38,7 @@
 
             .block h2 {
                 margin-top: 0;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 color: #1b263b;
             }
 
@@ -47,8 +47,7 @@
         select {
             width: 100%;
             padding: 8px;
-            margin-top: 8px;
-            margin-bottom: 15px;
+            margin: 8px 0 15px;
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 1em;
@@ -70,13 +69,18 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 10px;
+            margin: 5px 5px 10px 0;
         }
 
             button:hover,
             input[type="submit"]:hover,
             input[type="reset"]:hover {
                 background-color: #2c3e50;
+            }
+
+            button:disabled {
+                background-color: #999;
+                cursor: not-allowed;
             }
 
         table {
@@ -99,109 +103,96 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
+        a {
+            color: #1b263b;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Connectivity Web Page</h1>
+    <h1>All HTML Elements Test Page</h1>
 
     <div class="grid">
 
         <div class="block">
-            <h2>User Info</h2>
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Your name">
-
-            <label for="age">Age:</label>
-            <input type="text" id="age" placeholder="Your age">
-
-            <label for="city">City:</label>
-            <input type="text" id="city" placeholder="Your city">
-
-            <input type="submit" value="Submit">
+            <h2>Text Box</h2>
+            <input type="text" placeholder="Enter text here">
         </div>
 
         <div class="block">
-            <h2>Connection Type</h2>
-            <label><input type="radio" name="connection" value="wifi">Wi-Fi</label><br>
-            <label><input type="radio" name="connection" value="ethernet">Ethernet</label><br>
-            <label><input type="radio" name="connection" value="mobile">Mobile Data</label><br>
-            <input type="reset" value="Reset">
+            <h2>Text Area</h2>
+            <textarea rows="4" placeholder="Write multiple lines..."></textarea>
         </div>
 
         <div class="block">
-            <h2>Connection Status</h2>
-            <label><input type="checkbox" name="status" value="connected">Connected</label><br>
-            <label><input type="checkbox" name="status" value="secure">Secure</label><br>
-            <label><input type="checkbox" name="status" value="fast">Fast Connection</label>
+            <h2>Check Boxes</h2>
+            <label><input type="checkbox">Option A</label><br>
+            <label><input type="checkbox">Option B</label><br>
+            <label><input type="checkbox">Option C</label>
         </div>
 
         <div class="block">
-            <h2>Combo Box</h2>
-            <label for="combo">Select your diet style:</label>
-            <select id="combo">
-                <option>Standard</option>
-                <option>Vegetarian</option>
-                <option>Vegan</option>
-                <option>Keto</option>
-                <option>Paleo</option>
-                <option>Low Carb</option>
-                <option>Intermittent Fasting</option>
+            <h2>Radio Buttons</h2>
+            <label><input type="radio" name="group1">Choice 1</label><br>
+            <label><input type="radio" name="group1">Choice 2</label><br>
+            <label><input type="radio" name="group1">Choice 3</label>
+        </div>
+
+        <div class="block">
+            <h2>Combo Box (Select)</h2>
+            <select>
+                <option>Select an item</option>
+                <option>Item 1</option>
+                <option>Item 2</option>
+                <option>Item 3</option>
+                <option>Item 4</option>
+                <option>Item 5</option>
             </select>
         </div>
 
         <div class="block">
-            <h2>List Box</h2>
-            <label for="listbox">Preferred meals:</label>
-            <select id="listbox" multiple size="5">
-                <option>Chicken Salad</option>
-                <option>Fruit Bowl</option>
-                <option>Protein Shake</option>
-                <option>Quinoa with Veggies</option>
-                <option>Avocado Toast</option>
-                <option>Greek Yogurt</option>
+            <h2>List Box (Multi-select)</h2>
+            <select multiple size="5">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Grapes</option>
+                <option>Orange</option>
+                <option>Avocado</option>
+                <option>Watermelon</option>
             </select>
+        </div>
+
+        <div class="block">
+            <h2>Hyperlink</h2>
+            <a href="https://example.com" target="_blank">Visit Example.com</a>
         </div>
 
         <div class="block">
             <h2>Image</h2>
-            <img src="https://via.placeholder.com/400x250.png?text=Healthy+Food+Image" alt="Healthy food sample">
+            <img src="https://via.placeholder.com/400x250.png?text=Test+Image" alt="Placeholder Image">
         </div>
 
-        <div class="block" style="grid-column: span 2;">
-            <h2>Healthy Eating Table</h2>
+        <div class="block">
+            <h2>Table: Healthy Food</h2>
             <table>
-                <tr>
-                    <th>Food</th>
-                    <th>Calories</th>
-                    <th>Category</th>
-                </tr>
-                <tr>
-                    <td>Apple</td>
-                    <td>95 kcal</td>
-                    <td>Fruit</td>
-                </tr>
-                <tr>
-                    <td>Brown Rice</td>
-                    <td>216 kcal</td>
-                    <td>Grain</td>
-                </tr>
-                <tr>
-                    <td>Chicken Breast</td>
-                    <td>165 kcal</td>
-                    <td>Protein</td>
-                </tr>
-                <tr>
-                    <td>Avocado</td>
-                    <td>250 kcal</td>
-                    <td>Healthy Fat</td>
-                </tr>
-                <tr>
-                    <td>Broccoli</td>
-                    <td>55 kcal</td>
-                    <td>Vegetable</td>
-                </tr>
+                <tr><th>Food</th><th>Calories</th><th>Type</th></tr>
+                <tr><td>Apple</td><td>95</td><td>Fruit</td></tr>
+                <tr><td>Chicken</td><td>165</td><td>Protein</td></tr>
+                <tr><td>Rice</td><td>216</td><td>Grain</td></tr>
+                <tr><td>Avocado</td><td>250</td><td>Fat</td></tr>
+                <tr><td>Broccoli</td><td>55</td><td>Vegetable</td></tr>
             </table>
+        </div>
+
+        <div class="block">
+            <h2>Buttons</h2>
+            <button>Basic Button</button>
+            <input type="submit" value="Submit Button">
+            <input type="reset" value="Reset Button">
+            <button disabled>Disabled Button</button>
+            <button onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Button',1000)">Loading Button</button>
+            <button><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Arrow_right_font_awesome.svg" width="16" style="vertical-align:middle; margin-right:6px;">Icon Button</button>
         </div>
 
     </div>
