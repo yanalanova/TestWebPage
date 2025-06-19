@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Test Elements Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 6px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>Connectivity Web Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f2f7fc;
+            color: #1b263b;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, #1b263b, #2c3e50);
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+            .hero img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: white;
+        }
+
+        .section {
+            background: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            max-width: 700px;
+            border-left: 6px solid #1b263b;
+        }
+
+            .section h2 {
+                color: #1b263b;
+                margin-bottom: 20px;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            accent-color: #1b263b;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>HTML Elements for Extension Testing</h1>
 
-  <section>
-    <label for="textbox">Text Box:</label>
-    <input type="text" id="textbox" placeholder="Type here...">
-  </section>
+    <section class="hero">
+        <img src="hero-image.png" alt="Connectivity Test Web Page" />
+        <h1>Connectivity Web Page</h1>
+    </section>
 
-  <section>
-    <label for="textarea">Text Area:</label>
-    <textarea id="textarea" rows="4" cols="40" placeholder="Write something..."></textarea>
-  </section>
+    <section class="section">
+        <h2>Radio Buttons</h2>
+        <div class="input-group">
+            <label><input type="radio" name="network" value="wifi">Wi-Fi</label>
+            <label><input type="radio" name="network" value="ethernet">Ethernet</label>
+            <label><input type="radio" name="network" value="mobile">Mobile Data</label>
+        </div>
+    </section>
 
-  <section>
-    <label>Button:</label>
-    <button onclick="alert('Button clicked!')">Click Me</button>
-  </section>
+    <section class="section">
+        <h2>Checkboxes</h2>
+        <div class="input-group">
+            <label><input type="checkbox" name="status" value="connected">Connected</label>
+            <label><input type="checkbox" name="status" value="secure">Secure</label>
+            <label><input type="checkbox" name="status" value="fast">Fast Connection</label>
+        </div>
+    </section>
 
-  <section>
-    <label for="checkbox">Checkbox:</label>
-    <input type="checkbox" id="checkbox">
-    <label for="checkbox">I agree to the terms</label>
-  </section>
-
-  <section>
-    <label for="combo">Combo Box (Select):</label>
-    <select id="combo">
-      <option value="one">Option 1</option>
-      <option value="two">Option 2</option>
-    </select>
-  </section>
-
-  <section>
-    <label for="link">Hyperlink:</label>
-    <a href="https://example.com" target="_blank" id="link">Visit Example</a>
-  </section>
-
-  <section>
-    <label>Image:</label>
-    <img src="https://via.placeholder.com/150" alt="Placeholder image">
-  </section>
-
-  <section>
-    <label for="listbox">List Box (multi-select):</label>
-    <select id="listbox" multiple size="4">
-      <option>Item 1</option>
-      <option>Item 2</option>
-      <option>Item 3</option>
-    </select>
-  </section>
-
-  <section>
-    <label>Radio Buttons:</label>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Female</label>
-  </section>
-
-  <section>
-    <label>Table:</label>
-    <table>
-      <tr><th>Name</th><th>Age</th></tr>
-      <tr><td>Olivia</td><td>25</td></tr>
-      <tr><td>John</td><td>30</td></tr>
-    </table>
-  </section>
 </body>
 </html>
