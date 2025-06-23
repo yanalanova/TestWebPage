@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iframe Test Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .block {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <h2>Text Input</h2>
+        <input type="text" placeholder="Enter some text">
+    </div>
+
+    <div class="block">
+        <h2>Checkboxes</h2>
+        <label><input type="checkbox"> Option A</label>
+        <label><input type="checkbox"> Option B</label>
+        <label><input type="checkbox"> Option C</label>
+    </div>
+
+    <div class="block">
+        <h2>Radio Buttons</h2>
+        <label><input type="radio" name="group"> Choice 1</label>
+        <label><input type="radio" name="group"> Choice 2</label>
+    </div>
+
+    <div class="block">
+        <h2>Dropdown</h2>
+        <select>
+            <option>--Select--</option>
+            <option>Value 1</option>
+            <option>Value 2</option>
+            <option>Value 3</option>
+        </select>
+    </div>
+
+    <div class="block">
+        <h2>Sample Table</h2>
+        <table>
+            <thead>
+                <tr><th>Name</th><th>Age</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Anna</td><td>28</td></tr>
+                <tr><td>Oleh</td><td>35</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
