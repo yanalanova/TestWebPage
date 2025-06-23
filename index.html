@@ -121,14 +121,109 @@
     <h1>Connectivity Test Page</h1>
 
     <div class="grid">
-        <!-- existing blocks -->
-        <!-- iframe loader block -->
-        <div class="block" style="grid-column: span 2;">
-            <h2>Iframe Loader</h2>
-            <input type="text" id="urlInput" placeholder="Enter URL here">
-            <button onclick="loadURL()">GO</button>
-            <iframe name="FRAME_CHILD" id="FRAME_CHILD" width="100%" height="300px" style="margin-top: 10px; border: 1px solid #ccc;"></iframe>
+
+        <div class="block">
+            <h2>Text Inputs</h2>
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" id="username" placeholder="Your name">
+                <input type="password" placeholder="Password">
+                <input type="date">
+                <input type="submit" value="Submit">
+            </form>
         </div>
+
+        <div class="block">
+            <h2>Textarea & Range</h2>
+            <textarea rows="3" placeholder="Type your message..."></textarea>
+            <label for="range">Volume:</label>
+            <input type="range" min="0" max="100" value="50" id="range">
+        </div>
+
+        <div class="block">
+            <h2>Checkboxes</h2>
+            <form onreset="handleReset()">
+                <label><input type="checkbox" name="option">Option A</label><br>
+                <label><input type="checkbox" name="option">Option B</label><br>
+                <label><input type="checkbox" name="option">Option C</label><br>
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+
+        <div class="block">
+            <h2>Radio Buttons</h2>
+            <label><input type="radio" name="connection">Wi-Fi</label><br>
+            <label><input type="radio" name="connection">Ethernet</label><br>
+            <label><input type="radio" name="connection">Mobile</label>
+        </div>
+
+        <div class="block">
+            <h2>Combo Box</h2>
+            <select>
+                <option>Select plan</option>
+                <option>Free</option>
+                <option>Basic</option>
+                <option>Pro</option>
+                <option>Enterprise</option>
+            </select>
+        </div>
+
+        <div class="block">
+            <h2>List Box</h2>
+            <select multiple size="5">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Carrot</option>
+                <option>Chicken</option>
+                <option>Salmon</option>
+            </select>
+        </div>
+
+        <div class="block">
+            <h2>File Upload</h2>
+            <input type="file">
+        </div>
+
+        <div class="block">
+            <h2>Disabled & Readonly</h2>
+            <input type="text" value="Can't edit me" disabled><br>
+            <input type="text" value="Read-only text" readonly>
+        </div>
+
+        <div class="block">
+            <h2>Buttons</h2>
+            <button onclick="alert('Button clicked!')">Click me</button>
+            <button disabled>Disabled</button>
+            <button onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Done', 1500)">Loading Button</button>
+            <button onclick="toggleBlock()">Toggle Block</button>
+        </div>
+
+        <div class="block hidden" id="toggleTarget">
+            <h2>Dynamically Shown Block</h2>
+            <p>This block was shown using JavaScript toggle.</p>
+        </div>
+
+        <div class="block">
+            <h2>Hyperlink</h2>
+            <a href="https://example.com" target="_blank">Visit Example</a>
+        </div>
+
+        <div class="block">
+            <h2>Image</h2>
+            <img src="https://via.placeholder.com/400x250.png?text=Test+Image" alt="Test image">
+        </div>
+
+        <div class="block" style="grid-column: span 2;">
+            <h2>Healthy Food Table</h2>
+            <table>
+                <tr><th>Food</th><th>Calories</th><th>Category</th></tr>
+                <tr><td>Apple</td><td>95</td><td>Fruit</td></tr>
+                <tr><td>Rice</td><td>216</td><td>Grain</td></tr>
+                <tr><td>Chicken</td><td>165</td><td>Protein</td></tr>
+                <tr><td>Avocado</td><td>250</td><td>Fat</td></tr>
+                <tr><td>Broccoli</td><td>55</td><td>Vegetable</td></tr>
+            </table>
+        </div>
+
     </div>
 
     <script>
@@ -149,11 +244,6 @@
         function toggleBlock() {
             const el = document.getElementById("toggleTarget");
             el.classList.toggle("hidden");
-        }
-
-        function loadURL() {
-            const url = document.getElementById("urlInput").value;
-            document.getElementById("FRAME_CHILD").src = url;
         }
     </script>
 
