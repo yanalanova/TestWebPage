@@ -224,6 +224,14 @@
             </table>
         </div>
 
+        <!-- ВСТАВЛЕНО: iframe loader -->
+        <div class="block" style="grid-column: span 2;">
+            <h2>Iframe Loader</h2>
+            <input type="text" id="urlInput" placeholder="Enter URL here (e.g., iframeContent.html)">
+            <button onclick="loadURL()">GO</button>
+            <iframe name="FRAME_CHILD" id="FRAME_CHILD" width="100%" height="300px" style="margin-top: 10px; border: 1px solid #ccc;"></iframe>
+        </div>
+
     </div>
 
     <script>
@@ -244,6 +252,11 @@
         function toggleBlock() {
             const el = document.getElementById("toggleTarget");
             el.classList.toggle("hidden");
+        }
+
+        function loadURL() {
+            const url = document.getElementById("urlInput").value.trim();
+            document.getElementById("FRAME_CHILD").src = url;
         }
     </script>
 
