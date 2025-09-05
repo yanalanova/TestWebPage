@@ -118,47 +118,47 @@
 </head>
 <body>
 
-    <h1>Connectivity Test Page</h1>
+    <h1 id="page-title">Connectivity Test Page</h1>
 
     <div class="grid">
 
-        <div class="block">
+        <div class="block" id="section-text-inputs">
             <h2>Text Inputs</h2>
-            <form onsubmit="handleSubmit(event)">
-                <input type="text" id="username" placeholder="Your name">
-                <input type="password" placeholder="Password">
-                <input type="date">
-                <input type="submit" value="Submit">
+            <form id="form-login" onsubmit="handleSubmit(event)">
+                <input type="text" id="input-username" placeholder="Your name">
+                <input type="password" id="input-password" placeholder="Password">
+                <input type="date" id="input-date">
+                <input type="submit" id="btn-submit" value="Submit">
             </form>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-textarea">
             <h2>Textarea & Range</h2>
-            <textarea rows="3" placeholder="Type your message..."></textarea>
-            <label for="range">Volume:</label>
-            <input type="range" min="0" max="100" value="50" id="range">
+            <textarea id="textarea-message" rows="3" placeholder="Type your message..."></textarea>
+            <label for="range-volume">Volume:</label>
+            <input type="range" id="range-volume" min="0" max="100" value="50">
         </div>
 
-        <div class="block">
+        <div class="block" id="section-checkboxes">
             <h2>Checkboxes</h2>
-            <form onreset="handleReset()">
-                <label><input type="checkbox" name="option">Option A</label><br>
-                <label><input type="checkbox" name="option">Option B</label><br>
-                <label><input type="checkbox" name="option">Option C</label><br>
-                <input type="reset" value="Reset">
+            <form id="form-checkboxes" onreset="handleReset()">
+                <label><input type="checkbox" id="chk-option-a" name="option">Option A</label><br>
+                <label><input type="checkbox" id="chk-option-b" name="option">Option B</label><br>
+                <label><input type="checkbox" id="chk-option-c" name="option">Option C</label><br>
+                <input type="reset" id="btn-reset" value="Reset">
             </form>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-radios">
             <h2>Radio Buttons</h2>
-            <label><input type="radio" name="connection">Wi-Fi</label><br>
-            <label><input type="radio" name="connection">Ethernet</label><br>
-            <label><input type="radio" name="connection">Mobile</label>
+            <label><input type="radio" id="radio-wifi" name="connection">Wi-Fi</label><br>
+            <label><input type="radio" id="radio-ethernet" name="connection">Ethernet</label><br>
+            <label><input type="radio" id="radio-mobile" name="connection">Mobile</label>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-combobox">
             <h2>Combo Box</h2>
-            <select>
+            <select id="combo-plan">
                 <option>Select plan</option>
                 <option>Free</option>
                 <option>Basic</option>
@@ -167,34 +167,34 @@
             </select>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-listbox">
             <h2>List Box</h2>
-            <select multiple size="5">
-                <option>Apple</option>
-                <option>Banana</option>
-                <option>Carrot</option>
-                <option>Chicken</option>
-                <option>Salmon</option>
+            <select id="list-fruits" multiple size="5">
+                <option id="option-apple">Apple</option>
+                <option id="option-banana">Banana</option>
+                <option id="option-carrot">Carrot</option>
+                <option id="option-chicken">Chicken</option>
+                <option id="option-salmon">Salmon</option>
             </select>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-file">
             <h2>File Upload</h2>
-            <input type="file">
+            <input type="file" id="file-upload">
         </div>
 
-        <div class="block">
+        <div class="block" id="section-disabled">
             <h2>Disabled & Readonly</h2>
-            <input type="text" value="Can't edit me" disabled><br>
-            <input type="text" value="Read-only text" readonly>
+            <input type="text" id="input-disabled" value="Can't edit me" disabled><br>
+            <input type="text" id="input-readonly" value="Read-only text" readonly>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-buttons">
             <h2>Buttons</h2>
-            <button onclick="alert('Button clicked!')">Click me</button>
-            <button disabled>Disabled</button>
-            <button onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Done', 1500)">Loading Button</button>
-            <button onclick="toggleBlock()">Toggle Block</button>
+            <button id="btn-click" onclick="alert('Button clicked!')">Click me</button>
+            <button id="btn-disabled" disabled>Disabled</button>
+            <button id="btn-loading" onclick="this.innerText='Loading...'; setTimeout(()=>this.innerText='Loading Done', 1500)">Loading Button</button>
+            <button id="btn-toggle" onclick="toggleBlock()">Toggle Block</button>
         </div>
 
         <div class="block hidden" id="toggleTarget">
@@ -202,33 +202,32 @@
             <p>This block was shown using JavaScript toggle.</p>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-link">
             <h2>Hyperlink</h2>
-            <a href="https://example.com" target="_blank">Visit Example</a>
+            <a id="link-example" href="https://example.com" target="_blank">Visit Example</a>
         </div>
 
-        <div class="block">
+        <div class="block" id="section-image">
             <h2>Image</h2>
-            <img src="https://via.placeholder.com/400x250.png?text=Test+Image" alt="Test image">
+            <img id="img-test" src="https://via.placeholder.com/400x250.png?text=Test+Image" alt="Test image">
         </div>
 
-        <div class="block" style="grid-column: span 2;">
+        <div class="block" id="section-table" style="grid-column: span 2;">
             <h2>Healthy Food Table</h2>
-            <table>
+            <table id="healthy-food-table">
                 <tr><th>Food</th><th>Calories</th><th>Category</th></tr>
-                <tr><td>Apple</td><td>95</td><td>Fruit</td></tr>
-                <tr><td>Rice</td><td>216</td><td>Grain</td></tr>
-                <tr><td>Chicken</td><td>165</td><td>Protein</td></tr>
-                <tr><td>Avocado</td><td>250</td><td>Fat</td></tr>
-                <tr><td>Broccoli</td><td>55</td><td>Vegetable</td></tr>
+                <tr id="row-apple"><td>Apple</td><td>95</td><td>Fruit</td></tr>
+                <tr id="row-rice"><td>Rice</td><td>216</td><td>Grain</td></tr>
+                <tr id="row-chicken"><td>Chicken</td><td>165</td><td>Protein</td></tr>
+                <tr id="row-avocado"><td>Avocado</td><td>250</td><td>Fat</td></tr>
+                <tr id="row-broccoli"><td>Broccoli</td><td>55</td><td>Vegetable</td></tr>
             </table>
         </div>
 
-        <!-- ВСТАВЛЕНО: iframe loader -->
-        <div class="block" style="grid-column: span 2;">
+        <div class="block" id="section-iframe" style="grid-column: span 2;">
             <h2>Iframe Loader</h2>
             <input type="text" id="urlInput" placeholder="Enter URL here (e.g., iframeContent.html)">
-            <button onclick="loadURL()">GO</button>
+            <button id="btn-go" onclick="loadURL()">GO</button>
             <iframe name="FRAME_CHILD" id="FRAME_CHILD" width="100%" height="300px" style="margin-top: 10px; border: 1px solid #ccc;"></iframe>
         </div>
 
@@ -236,8 +235,9 @@
 
     <script>
         function handleSubmit(event) {
+        function handleSubmit(event) {
             event.preventDefault();
-            const username = document.getElementById('username').value.trim();
+            const username = document.getElementById('input-username').value.trim();
             if (username === '') {
                 alert("Please enter your name.");
                 return;
