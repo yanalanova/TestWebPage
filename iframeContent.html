@@ -7,10 +7,20 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
+            background-color: #fafafa;
         }
 
         .block {
             margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #1b263b;
         }
 
         label {
@@ -22,6 +32,8 @@
             width: 100%;
             padding: 6px;
             margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
         table {
@@ -33,6 +45,7 @@
         th, td {
             border: 1px solid #aaa;
             padding: 8px;
+            text-align: left;
         }
 
         input[type="checkbox"], input[type="radio"] {
@@ -41,27 +54,27 @@
     </style>
 </head>
 <body>
-    <div class="block">
+    <div class="block" id="iframe-text">
         <h2>Text Input</h2>
-        <input type="text" placeholder="Enter some text">
+        <input type="text" id="iframe-input-text" placeholder="Enter some text">
     </div>
 
-    <div class="block">
+    <div class="block" id="iframe-checkboxes">
         <h2>Checkboxes</h2>
-        <label><input type="checkbox"> Option A</label>
-        <label><input type="checkbox"> Option B</label>
-        <label><input type="checkbox"> Option C</label>
+        <label><input type="checkbox" id="chk-a"> Option A</label>
+        <label><input type="checkbox" id="chk-b"> Option B</label>
+        <label><input type="checkbox" id="chk-c"> Option C</label>
     </div>
 
-    <div class="block">
+    <div class="block" id="iframe-radios">
         <h2>Radio Buttons</h2>
-        <label><input type="radio" name="group"> Choice 1</label>
-        <label><input type="radio" name="group"> Choice 2</label>
+        <label><input type="radio" name="group" id="radio-1"> Choice 1</label>
+        <label><input type="radio" name="group" id="radio-2"> Choice 2</label>
     </div>
 
-    <div class="block">
+    <div class="block" id="iframe-dropdown">
         <h2>Dropdown</h2>
-        <select>
+        <select id="iframe-select">
             <option>--Select--</option>
             <option>Value 1</option>
             <option>Value 2</option>
@@ -69,7 +82,7 @@
         </select>
     </div>
 
-    <div class="block">
+    <div class="block" id="iframe-table">
         <h2>Sample Table</h2>
         <table>
             <thead>
